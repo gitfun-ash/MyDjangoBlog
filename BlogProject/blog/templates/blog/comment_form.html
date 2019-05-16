@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<h1> New comment</h1>
+
+<form class="comment-form" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-default">Post Comment</button>
+
+</form>
+
+<script src="js/medium-editor.js"></script>
+<script>var editor= new MediumEditor('.editable');</script>
+<script> var elements = document.querySelectorAll('.editable'),
+    editor = new MediumEditor(elements);</script>
+
+{% endblock %}
